@@ -31,3 +31,6 @@ Or experiment on virtualbox first.
 
 
 ![Screenshots](http://i.imgur.com/1vZpnf4.png)
+
+
+![Screenshots](http://i.imgur.com/tfM4Ggm.png)
