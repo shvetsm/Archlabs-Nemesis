@@ -1,6 +1,16 @@
 # ARCHLabs Nemesis
 
-Always based on the latest ARCHLabs latest iso
+Always based on the latest ARCHLabs iso
+
+Download the latest iso from here : https://sourceforge.net/projects/archlabs/
+
+More info about ARCHLabs can be found here : https://archlabsblog.wordpress.com/
+
+Forum of ARCHLabs can be found here : http://archlabs.prophpbb.com
+
+Github can be found here : https://github.com/archlabs
+
+Tutorials about ARCHLabs can be found here : http://erikdubois.be/category/linux/archlabs/
 
 This github gathers all the extra software and tweaking I like to do to my system.
 Upon reinstallation it only takes a minimum of time to finetune my system again.
