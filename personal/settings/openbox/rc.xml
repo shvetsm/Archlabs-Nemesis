@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
 <openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
   <resistance>
-    <strength>20</strength>
+    <strength>10</strength>
     <screen_edge_strength>20</screen_edge_strength>
   </resistance>
   <focus>
     <focusNew>yes</focusNew>
     <!-- always try to focus new windows when they appear. other rules do
        apply -->
-    <followMouse>yes</followMouse>
+    <followMouse>no</followMouse>
     <!-- move focus to a window when you move the mouse into it -->
-    <focusLast>no</focusLast>
+    <focusLast>yes</focusLast>
     <!-- focus the last used window when changing desktops, instead of the one
        under the mouse pointer. when followMouse is enabled -->
     <underMouse>no</underMouse>
     <!-- move focus under the mouse, even when the mouse is not moving -->
-    <focusDelay>500</focusDelay>
+    <focusDelay>200</focusDelay>
     <!-- when followMouse is enabled, the mouse must be inside the window for
        this many milliseconds (1000 = 1 sec) before moving focus to it -->
     <raiseOnFocus>no</raiseOnFocus>
@@ -23,10 +23,10 @@
        mouse into it, also raise the window -->
   </focus>
   <placement>
-    <policy>Smart</policy>
+    <policy>UnderMouse</policy>
     <!-- 'Smart' or 'UnderMouse' -->
     <center>yes</center>
-    <!-- whether to place windows in the ceneter of the free area found or
+    <!-- whether to place windows in the center of the free area found or
        the top left corner -->
     <monitor>Any</monitor>
     <!-- with Smart placement on a multi-monitor system, try to place new windows
@@ -118,15 +118,19 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>2</number>
+    <number>4</number>
     <firstdesk>1</firstdesk>
     <names>
-      <name>&lt; 1 &gt;</name>
-      <name>&lt; 2 &gt;</name>
+      <!-- set names up here if you want to, like this:
+      <name>desktop 1</name>
+      <name>desktop 2</name>
+      -->
+      <name>1</name>
+      <name>2</name>
       <name>3</name>
       <name>4</name>
     </names>
-    <popupTime>735</popupTime>
+    <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
          desktops.  Set this to 0 to disable the popup. -->
   </desktops>
@@ -152,12 +156,12 @@
        cases. -->
   <margins>
     <top>0</top>
-    <bottom>0</bottom>
+    <bottom>1</bottom>
     <left>0</left>
     <right>0</right>
   </margins>
   <dock>
-    <position>TopLeft</position>
+    <position>Floating</position>
     <!-- (Top|Bottom)(Left|Right|)|Top|Bottom|Left|Right|Floating -->
     <floatingX>0</floatingX>
     <floatingY>0</floatingY>
@@ -176,11 +180,6 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
-    <keybind key="C-A-m">
-      <action name="Execute">
-        <command>xfce4-settings-manager</command>
-      </action>
-    </keybind>
     <keybind key="C-S-BackSpace">
       <action name="Execute">
         <command>openbox --restart</command>
@@ -261,267 +260,44 @@
         <height>50%</height>
       </action>
     </keybind>
-    <keybind key="W-Right">
-      <action name="UnmaximizeFull"/>
-      <action name="MaximizeVert"/>
-      <action name="MoveResizeTo">
-        <width>50%</width>
-      </action>
-      <action name="MoveToEdgeEast"/>
-    </keybind>
-    <keybind key="W-Left">
-      <action name="UnmaximizeFull"/>
-      <action name="MaximizeVert"/>
-      <action name="MoveResizeTo">
-        <width>50%</width>
-      </action>
-      <action name="MoveToEdgeWest"/>
-    </keybind>
-    <keybind key="W-Up">
-      <action name="MaximizeFull"/>
-    </keybind>
-    <keybind key="W-Down">
-      <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <width>80%</width>
-        <height>80%</height>
-      </action>
-      <action name="MoveToCenter"/>
-    </keybind>
-    <keybind key="XF86AudioRaiseVolume">
-      <action name="Execute">
-        <command>amixer -D pulse sset Master '5%+'</command>
-      </action>
-    </keybind>
-    <keybind key="XF86AudioLowerVolume">
-      <action name="Execute">
-        <command>amixer -D pulse sset Master '5%-'</command>
-      </action>
-    </keybind>
-    <keybind key="XF86AudioMute">
-      <action name="Execute">
-        <command>amixer -D pulse set Master toggle</command>
-      </action>
-    </keybind>
-    <keybind key="XF86AudioNext">
-      <action name="Execute">
-        <command>playerctl next</command>
-      </action>
-    </keybind>
-    <keybind key="XF86AudioPlay">
-      <action name="Execute">
-        <command>playerctl play-pause</command>
-      </action>
-    </keybind>
-    <keybind key="XF86AudioPrev">
-      <action name="Execute">
-        <command>playerctl previous</command>
-      </action>
-    </keybind>
-    <keybind key="XF86AudioStop">
-      <keybind key="XF86MonBrightnessUp">
-        <action name="Execute">
-          <command>xbacklight +10</command>
-        </action>
-      </keybind>
-      <keybind key="XF86MonBrightnessDown">
-        <action name="Execute">
-          <command>xbacklight -10</command>
-        </action>
-      </keybind>
-    </keybind>
-    <keybind key="C-A-Left">
-      <action name="DesktopLeft"/>
-    </keybind>
     <keybind key="C-A-Right">
       <action name="DesktopRight"/>
     </keybind>
-    <keybind key="A-t">
-      <action name="Execute">
-        <command>variety -t</command>
-      </action>
-    </keybind>
-    <keybind key="A-f">
-      <action name="Execute">
-        <command>variety -f</command>
-      </action>
-    </keybind>
-    <keybind key="A-p">
-      <action name="Execute">
-        <command>variety -p</command>
-      </action>
-    </keybind>
-    <keybind key="A-Left">
-      <action name="Execute">
-        <command>variety -p</command>
-      </action>
-    </keybind>
-    <keybind key="A-n">
-      <action name="Execute">
-        <command>variety -n</command>
-      </action>
-    </keybind>
-    <keybind key="A-Right">
-      <action name="Execute">
-        <command>variety -n</command>
-      </action>
-    </keybind>
-    <keybind key="A-Down">
-      <action name="Execute">
-        <command>variety --resume</command>
-      </action>
-    </keybind>
-    <keybind key="A-Up">
-      <action name="Execute">
-        <command>variety --pause</command>
-      </action>
-    </keybind>
-    <keybind key="W-Pause">
-      <action name="Execute">
-        <command>oblogout</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-k">
-      <action name="Execute">
-        <command>obkey</command>
-      </action>
-    </keybind>
-    <keybind key="W-F1">
-      <action name="Execute">
-        <command>firefox</command>
-      </action>
-    </keybind>
-    <keybind key="W-F2">
-      <action name="Execute">
-        <command>subl3</command>
-      </action>
-    </keybind>
-    <keybind key="W-F3">
-      <action name="Execute">
-        <command>inkscape</command>
-      </action>
-    </keybind>
-    <keybind key="W-F4">
-      <action name="Execute">
-        <command>gimp</command>
-      </action>
-    </keybind>
-    <keybind key="W-F5">
-      <action name="Execute">
-        <command>meld</command>
-      </action>
-    </keybind>
-    <keybind key="W-F6">
-      <action name="Execute">
-        <command>vlc</command>
-      </action>
-    </keybind>
-    <keybind key="W-F7">
-      <action name="Execute">
-        <command>virtualbox</command>
-      </action>
-    </keybind>
-    <keybind key="W-F8">
-      <action name="Execute">
-        <command>nemo</command>
-      </action>
-    </keybind>
-    <keybind key="W-F9">
-      <action name="Execute">
-        <command>evolution</command>
-      </action>
-    </keybind>
-    <keybind key="W-F10">
-      <action name="Execute">
-        <command>spotify</command>
-      </action>
-    </keybind>
-    <keybind key="S-W-q">
-      <action name="Close"/>
-    </keybind>
-    <keybind key="C-S-Escape">
-      <action name="Execute">
-        <command>gnome-system-monitor</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-V">
-      <action name="Execute">
-        <command>vivaldi-stable</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-B">
-      <action name="Execute">
-        <command>nemo</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-W">
-      <action name="Execute">
-        <command>subl3</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-S">
-      <action name="Execute">
-        <command>spotify</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-C">
-      <action name="Execute">
-        <command>catfish</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-i">
-      <action name="Execute">
-        <command>nitrogen</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-u">
-      <action name="Execute">
-        <command>obconf</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-F">
-      <action name="Execute">
-        <command>firefox</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-d">
-      <action name="ToggleShowDesktop"/>
-    </keybind>
-    <keybind key="W-Return">
-      <action name="Execute">
-        <command>gnome-terminal</command>
-      </action>
-    </keybind>
-    <keybind key="S-W-Return">
-      <action name="Execute">
-        <command>nemo</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-N">
-      <action name="Execute">
-        <command>nemo --quit</command>
-      </action>
-    </keybind>
-    <keybind key="W-d">
-      <action name="Execute">
-        <command>dmenu_run -i -nb '#151617' -nf '#d8d8d8' -sb '#d8d8d8' -sf '#151617' -fn 'NotoMonoRegular:bold:pixelsize=18'</command>
-      </action>
-    </keybind>
-    <keybind key="W-S-d">
-      <action name="Execute">
-        <command>dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-T">
-      <action name="Execute">
-        <command>gnome-terminal</command>
+    <keybind key="C-A-Left">
+      <action name="GoToDesktop">
+        <to>left</to>
+        <wrap>no</wrap>
       </action>
     </keybind>
     <keybind key="C-A-Up">
-      <action name="GoToDesktop"/>
+      <action name="GoToDesktop">
+        <to>up</to>
+        <wrap>no</wrap>
+      </action>
     </keybind>
     <keybind key="C-A-Down">
-      <action name="GoToDesktop"/>
+      <action name="GoToDesktop">
+        <to>down</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="A-Tab">
+      <action name="NextWindow"/>
+    </keybind>
+    <keybind key="A-S-Tab">
+      <action name="PreviousWindow"/>
+    </keybind>
+    <keybind key="W-S-Right">
+      <action name="DirectionalCycleWindows"/>
+    </keybind>
+    <keybind key="W-S-Left">
+      <action name="DirectionalCycleWindows"/>
+    </keybind>
+    <keybind key="W-S-Up">
+      <action name="DirectionalCycleWindows"/>
+    </keybind>
+    <keybind key="W-S-Down">
+      <action name="DirectionalCycleWindows"/>
     </keybind>
     <keybind key="S-A-Left">
       <action name="SendToDesktop">
@@ -543,9 +319,6 @@
         <desktop>2</desktop>
       </action>
     </keybind>
-    <keybind key="W-b">
-      <action name="ToggleDecorations"/>
-    </keybind>
     <keybind key="A-Escape">
       <action name="Lower"/>
       <action name="FocusToBottom"/>
@@ -556,8 +329,65 @@
         <menu>client-menu</menu>
       </action>
     </keybind>
-    <keybind key="A-F8">
-      <action name="ToggleDecorations"/>
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute">
+        <command>amixer -D pulse sset Master '5%+'</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+        <command>amixer -D pulse sset Master '5%-'</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute">
+        <command>amixer -D pulse set Master toggle</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioStop">
+      <action name="Execute">
+        <command>playerctl pause</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioPlay">
+      <action name="Execute">
+        <command>playerctl play-pause</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioPrev">
+      <action name="Execute">
+        <command>playerctl previous</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioNext">
+      <action name="Execute">
+        <command>playerctl next</command>
+      </action>
+    </keybind>
+    <keybind key="XF86MonBrightnessUp">
+      <action name="Execute">
+        <command>xbacklight +10</command>
+      </action>
+    </keybind>
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute">
+        <command>xbacklight -10</command>
+      </action>
+    </keybind>
+    <keybind key="Print">
+      <action name="Execute">
+        <command>scrot '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/Pictures/ ; gpicview ~/Pictures/$f'</command>
+      </action>
+    </keybind>
+    <keybind key="A-Print">
+      <action name="Execute">
+        <command>scrot -d 5 '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/Pictures/ ; gpicview ~/Pictures/$f'</command>
+      </action>
+    </keybind>
+    <keybind key="C-Print">
+      <action name="Execute">
+        <command>xfce4-screenshooter</command>
+      </action>
     </keybind>
     <keybind key="A-F2">
       <action name="Execute">
@@ -570,7 +400,12 @@
     </keybind>
     <keybind key="A-F3">
       <action name="Execute">
-        <command>dmenu_run -i -nb '#151617' -nf '#d8d8d8' -sb '#d8d8d8' -sf '#151617' -fn 'NotoMonoRegular:bold:pixelsize=18'</command>
+        <command>dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-d">
+      <action name="Execute">
+        <command>dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'</command>
       </action>
     </keybind>
     <keybind key="A-F4">
@@ -582,50 +417,28 @@
     <keybind key="A-F6">
       <action name="ToggleMaximize"/>
     </keybind>
-    <keybind key="Print">
-      <action name="Execute">
-        <command>xfce4-screenshooter</command>
-      </action>
+    <keybind key="A-F8">
+      <action name="ToggleDecorations"/>
     </keybind>
-    <keybind key="A-Print">
-      <action name="Execute">
-        <command>scrot '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/Pictures/ '</command>
-      </action>
+    <keybind key="W-d">
+      <action name="ToggleShowDesktop"/>
     </keybind>
-    <keybind key="C-Print">
-      <action name="Execute">
-        <command>gnome-screenshot -i</command>
-      </action>
-    </keybind>
-    <keybind key="A-Tab">
-      <action name="NextWindow"/>
-    </keybind>
-    <keybind key="A-S-Tab">
-      <action name="PreviousWindow"/>
-    </keybind>
-    <keybind key="W-S-Right">
-      <action name="DirectionalCycleWindows"/>
-    </keybind>
-    <keybind key="W-S-Left">
-      <action name="DirectionalCycleWindows"/>
-    </keybind>
-    <keybind key="W-S-Up">
-      <action name="DirectionalCycleWindows"/>
-    </keybind>
-    <keybind key="W-S-Down">
-      <action name="DirectionalCycleWindows"/>
+    <keybind key="W-b">
+      <action name="ToggleDecorations"/>
     </keybind>
     <keybind key="W-f">
-      <action name="ToggleMaximizeFull"/>
-    </keybind>
-    <keybind key="W-s">
       <action name="Execute">
-        <command>mintstick -m iso</command>
+        <command>thunar</command>
       </action>
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
         <command>termite</command>
+      </action>
+    </keybind>
+    <keybind key="W-w">
+      <action name="Execute">
+        <command>firefox</command>
       </action>
     </keybind>
     <keybind key="W-l">
@@ -673,22 +486,32 @@
         <menu>root-menu</menu>
       </action>
     </keybind>
-    <keybind key="C-A-a">
-      <action name="Execute">
-        <command>xfce4-appfinder</command>
-      </action>
-    </keybind>
     <keybind key="W-Right">
-      <action name="GrowToEdgeEast"/>
+      <action name="UnmaximizeFull"/>
+      <action name="MaximizeVert"/>
+      <action name="MoveResizeTo">
+        <width>50%</width>
+      </action>
+      <action name="MoveToEdgeEast"/>
     </keybind>
     <keybind key="W-Left">
-      <action name="GrowToEdgeWest"/>
-    </keybind>
-    <keybind key="W-Down">
-      <action name="GrowToEdgeSouth"/>
+      <action name="UnmaximizeFull"/>
+      <action name="MaximizeVert"/>
+      <action name="MoveResizeTo">
+        <width>50%</width>
+      </action>
+      <action name="MoveToEdgeWest"/>
     </keybind>
     <keybind key="W-Up">
-      <action name="GrowToEdgeNorth"/>
+      <action name="MaximizeFull"/>
+    </keybind>
+    <keybind key="W-Down">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <width>80%</width>
+        <height>80%</height>
+      </action>
+      <action name="MoveToCenter"/>
     </keybind>
     <keybind key="W-A-Left">
       <action name="UnmaximizeFull"/>
@@ -714,13 +537,205 @@
     <keybind key="A-m">
       <action name="Move"/>
     </keybind>
+    <keybind key="A-t">
+      <action name="Execute">
+        <command>variety -t</command>
+      </action>
+    </keybind>
+    <keybind key="A-f">
+      <action name="Execute">
+        <command>variety -f</command>
+      </action>
+    </keybind>
+    <keybind key="A-p">
+      <action name="Execute">
+        <command>variety -p</command>
+      </action>
+    </keybind>
+    <keybind key="A-Left">
+      <action name="Execute">
+        <command>variety -p</command>
+      </action>
+    </keybind>
+    <keybind key="A-n">
+      <action name="Execute">
+        <command>variety -n</command>
+      </action>
+    </keybind>
+    <keybind key="A-Right">
+      <action name="Execute">
+        <command>variety -n</command>
+      </action>
+    </keybind>
+    <keybind key="A-Down">
+      <action name="Execute">
+        <command>variety --resume</command>
+      </action>
+    </keybind>
+    <keybind key="A-Up">
+      <action name="Execute">
+        <command>variety --pause</command>
+      </action>
+    </keybind>
+    <keybind key="W-Pause">
+      <action name="Execute">
+        <command>oblogout</command>
+      </action>
+    </keybind>
+    <keybind key="S-W-q">
+      <action name="Close"/>
+    </keybind>
+    <keybind key="W-Return">
+      <action name="Execute">
+        <command>termite</command>
+      </action>
+    </keybind>
+    <keybind key="S-W-Return">
+      <action name="Execute">
+        <command>thunar</command>
+      </action>
+    </keybind>
+    <keybind key="W-F1">
+      <action name="Execute">
+        <command>firefox</command>
+      </action>
+    </keybind>
+    <keybind key="W-F2">
+      <action name="Execute">
+        <command>subl3</command>
+      </action>
+    </keybind>
+    <keybind key="W-F3">
+      <action name="Execute">
+        <command>inkscape</command>
+      </action>
+    </keybind>
+    <keybind key="W-F4">
+      <action name="Execute">
+        <command>gimp</command>
+      </action>
+    </keybind>
+    <keybind key="W-F5">
+      <action name="Execute">
+        <command>meld</command>
+      </action>
+    </keybind>
+    <keybind key="W-F6">
+      <action name="Execute">
+        <command>vlc</command>
+      </action>
+    </keybind>
+    <keybind key="W-F7">
+      <action name="Execute">
+        <command>virtualbox</command>
+      </action>
+    </keybind>
+    <keybind key="W-F8">
+      <action name="Execute">
+        <command>thunar</command>
+      </action>
+    </keybind>
+    <keybind key="W-F9">
+      <action name="Execute">
+        <command>evolution</command>
+      </action>
+    </keybind>
+    <keybind key="W-F10">
+      <action name="Execute">
+        <command>spotify</command>
+      </action>
+    </keybind>
+    <keybind key="C-S-Escape">
+      <action name="Execute">
+        <command>xfce4-taskmanager</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-q">
+      <action name="ShowMenu">
+        <menu>root-menu</menu>
+      </action>
+    </keybind>
+    <keybind key="C-A-m">
+      <action name="Execute">
+        <command>xfce4-settings-manager</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-k">
+      <action name="Execute">
+        <command>obkey</command>
+      </action>
+      <action name="MaximizeFull"/>
+    </keybind>
+    <keybind key="C-A-a">
+      <action name="Execute">
+        <command>xfce4-appfinder</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-T">
+      <action name="Execute">
+        <command>termite</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-d">
+      <action name="ToggleShowDesktop"/>
+    </keybind>
+    <keybind key="C-A-V">
+      <action name="Execute">
+        <command>vivaldi-stable</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-B">
+      <action name="Execute">
+        <command>thunar</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-W">
+      <action name="Execute">
+        <command>subl3</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-S">
+      <action name="Execute">
+        <command>spotify</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-C">
+      <action name="Execute">
+        <command>catfish</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-i">
+      <action name="Execute">
+        <command>nitrogen</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-u">
+      <action name="Execute">
+        <command>obconf</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-F">
+      <action name="Execute">
+        <command>firefox</command>
+      </action>
+    </keybind>
+    <keybind key="W-s">
+      <action name="Execute">
+        <command>mintstick -m iso</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-N">
+      <action name="Execute">
+        <command>nemo --quit</command>
+      </action>
+    </keybind>
   </keyboard>
   <mouse>
-    <dragThreshold>30</dragThreshold>
+    <dragThreshold>8</dragThreshold>
     <!-- number of pixels the mouse must move before a drag begins -->
-    <doubleClickTime>300</doubleClickTime>
+    <doubleClickTime>200</doubleClickTime>
     <!-- in milliseconds (1000 = 1 second) -->
-    <screenEdgeWarpTime>1000</screenEdgeWarpTime>
+    <screenEdgeWarpTime>400</screenEdgeWarpTime>
     <!-- Time before changing desktops when the pointer touches the edge of the
        screen while moving a window, in milliseconds (1000 = 1 second).
        Set this to 0 to disable warping -->
@@ -1094,7 +1109,7 @@
     <hideDelay>200</hideDelay>
     <!-- if a press-release lasts longer than this setting (in milliseconds), the
        menu is hidden again -->
-    <middle>yes</middle>
+    <middle>no</middle>
     <!-- center submenus vertically about the parent entry -->
     <submenuShowDelay>100</submenuShowDelay>
     <!-- time to delay before showing a submenu after hovering over the parent
@@ -1116,13 +1131,6 @@
       <position force="yes">
         <desktop>1</desktop>
         <monitor>1</monitor>
-      </position>
-      <maximized>yes</maximized>
-    </application>
-    <application name="Spotify">
-      <position force="yes">
-        <desktop>2</desktop>
-        <monitor>2</monitor>
       </position>
       <maximized>yes</maximized>
     </application>
