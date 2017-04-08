@@ -16,6 +16,7 @@ echo "#########        Creating folders               ################"
 echo "################################################################"
 
 [ -d $HOME"/.config/openbox" ] || mkdir -p $HOME"/.config/openbox"
+
 [ -d $HOME"/.config/obmenu-generator" ] || mkdir -p $HOME"/.config/obmenu-generator"
 
 [ -d $HOME"/.config/geany" ] || mkdir -p $HOME"/.config/geany"
