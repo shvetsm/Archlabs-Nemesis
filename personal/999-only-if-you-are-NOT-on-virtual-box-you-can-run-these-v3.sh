@@ -24,6 +24,6 @@ sudo pacman -Rns virtualbox-guest-utils virtualbox-guest-modules-arch
 sudo rm /etc/modules-load.d/virtualbox.conf
 
 echo "################################################################"
-echo "#########    virtual box for guest has been remoced     ########"
+echo "#########    virtual box for guest has been removed     ########"
 echo "################################################################"
 
