@@ -42,9 +42,9 @@ cursor          = #c5c8c6
 #background      = #1d1f21
 
 # 20% background transparency (requires a compositor)
-background = rgba(63, 63, 63, 0.8)
+#background = rgba(63, 63, 63, 0.8)
 # Arc theme
-#background = rgba(64, 69, 82, 0.8)
+background = rgba(64, 69, 82, 0.8)
 
 #Standard Archlabs coloring
 # colors from color0 to color254 can be set
@@ -65,6 +65,8 @@ background = rgba(63, 63, 63, 0.8)
 #color14 = #8abeb7
 #color15 = #c5c8c6
 
+# Arc theme coloring
+# colors from color0 to color254 can be set
 # Arc theme coloring
 # colors from color0 to color254 can be set
 color0 = #3f3f3f
