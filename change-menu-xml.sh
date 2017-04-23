@@ -14,10 +14,10 @@ set -e
 
 echo "Let us change all software to our personal preferences."
 
-# new application with capital first letter like rest in menu
-# old one does not matter
+# all small letters
+
 app1old=audacious
-app1new=Deadbeef
+app1new=deadbeef
 #app2old=
 #app2new=
 #app3old=
@@ -29,12 +29,26 @@ echo "Did you backup? Can I change it?  (y/n) "
 read response
 if [[ "$response" == [yY] ]]; then
     echo "Changing all instances";
-    sed -i 's/'$app1old'/'$app1new'/Ig' ~/.config/openbox/menu.xml
- #   sed -i 's/'$app2old'/'$app2new'/Ig' ~/.config/openbox/menu.xml
- #   sed -i 's/'$app3old'/'$app3new'/Ig' ~/.config/openbox/menu.xml
+    
+    #application 1
+    #label needs to have a first capital letter
+    app1newcapital=${app1new[@]^}
+    sed -i 's/<item label="'$app1old'/<item label="'$app1newcapital'/Ig' ~/.config/openbox/menu.xml
+    #changing command - no captital letter!
+    sed -i 's/<command>'$app1old'/<command>'$app1new'/Ig' ~/.config/openbox/menu.xml
+    
+	#copy/paste for more instances
+	
+    #application 2
+    #label needs to have a first capital letter
+    app2newcapital=${app2new[@]^}
+    sed -i 's/<item label="'$app2old'/<item label="'$app2newcapital'/Ig' ~/.config/openbox/menu.xml
+    #changing command - no captital letter!
+    sed -i 's/<command>'$app2old'/<command>'$app2new'/Ig' ~/.config/openbox/menu.xml
+
 
     echo "All done"
-	notify-send -u normal "All versions have been updated. Carry on!"
+	notify-send -u normal "All instances have been updated. Carry on!"
 
     else
     	echo "################################################################" 
