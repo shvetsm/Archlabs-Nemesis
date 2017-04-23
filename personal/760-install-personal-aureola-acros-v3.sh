@@ -18,6 +18,7 @@ cp -r ~/.aureola/acros/* ~/.config/conky
 cd ~/.aureola/acros
 ./install-conky.sh
 
+echo "making a copy of ~/.config/conky/ folder"
 mv ~/.config/conky/conky.conf ~/.config/conky/conky.conf.original
 mv ~/.config/conky/conky-archlabs-default.conf ~/.config/conky/conky.conf
 

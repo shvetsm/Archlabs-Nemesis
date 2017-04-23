@@ -12,14 +12,14 @@ set -e
 ##################################################################################################################
 
 
-echo "copying nitrogen settings "
+echo "copying uxrvt uxterm settings "
 
 
-cp -rf settings/nitrogen/ ~/.config/
+cp settings/urxvt/.Xdefaults ~
 
 
 
 echo "################################################################"
-echo "#######       nitrogen settings have been copied       ######"
+echo "#########     uxrvt and xterm settings have been copied   ######"
 echo "################################################################"
 
