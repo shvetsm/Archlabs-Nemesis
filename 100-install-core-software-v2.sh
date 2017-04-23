@@ -13,7 +13,7 @@ set -e
 
 #software from 'normal' repositories
 sudo pacman -S --noconfirm --needed archey3 baobab bleachbit clementine 
-sudo pacman -S --noconfirm --needed darktable dconf-editor
+sudo pacman -S --noconfirm --needed darktable deadbeef dconf-editor
 sudo pacman -S --noconfirm --needed evolution
 sudo pacman -S --noconfirm --needed geary glances gnome-disk-utility 
 sudo pacman -S --noconfirm --needed gpick grsync
