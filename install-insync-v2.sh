@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+#
 ##################################################################################################################
 # Written to be used on 64 bits computers
 # Author 	: 	Erik Dubois
@@ -11,16 +11,14 @@ set -e
 #
 ##################################################################################################################
 
+echo "Do not forget to change with qtconfig-qt4"
+echo " to something else than gkt+ and save "
+echo " then in terminal -- insync start"
 
+echo "Press enter to continue"; read dummy;
 
-
-
-echo "################################################################"
-echo "openbox-arc-git"
-echo "################################################################"
-
-
-package="openbox-arc-git"
+package="insync"
+command="insync"
 
 #----------------------------------------------------------------------------------
 
@@ -67,9 +65,3 @@ else
 	fi
 
 fi
-
-
-
-
-
-
