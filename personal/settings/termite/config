@@ -36,7 +36,8 @@ filter_unmatched_urls = true
 #modify_other_keys = false
 
 [colors]
-foreground      = #c5c8c6
+# https://critical.ch/xterm/
+foreground      = ghost
 foreground_bold = #c5c8c6
 cursor          = #c5c8c6
 #background      = #1d1f21
@@ -67,8 +68,7 @@ background = rgba(64, 69, 82, 0.8)
 
 # Arc theme coloring
 # colors from color0 to color254 can be set
-# Arc theme coloring
-# colors from color0 to color254 can be set
+
 color0 = #3f3f3f
 color1 = #705050
 color2 = #60b48a
