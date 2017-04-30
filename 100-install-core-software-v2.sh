@@ -22,7 +22,7 @@ sudo pacman -S --noconfirm --needed inxi
 sudo pacman -S --noconfirm --needed notify-osd pinta
 sudo pacman -S --noconfirm --needed redshift ristretto screenfetch shotwell 
 sudo pacman -S --noconfirm --needed simple-scan sysstat 
-sudo pacman -S --noconfirm --needed terminator transmission-cli
+sudo pacman -S --noconfirm --needed transmission-cli
 sudo pacman -S --noconfirm --needed vnstat unclutter  
 
 
