@@ -3,13 +3,16 @@ file:///home/erik/Documents Documents
 file:///home/erik/Music Music
 file:///home/erik/Pictures Pictures
 file:///home/erik/Videos Videos
-file:///home/erik/.config/openbox
+file:///home/erik/Dropbox
+file:///home/erik/Insync Insync
+file:///home/erik/ARCHLABS
+file:///home/erik/DATA DATA
+file:///home/erik/.config/openbox openbox
 file:///home/erik/DATA/archlabs/installation/personal/settings
+file:///home/erik/.config .config
 file:///home/erik/DATA/archlabs/installation/personal
 file:///home/erik/DATA/archlabs/installation
 file:///home/erik/DATA/archlabs
-file:///home/erik/DATA DATA
-file:///home/erik/Insync Insync
 file:///home/erik/.icons .icons
 file:///usr/share/icons icons
 file:///home/erik/.themes .themes
@@ -18,7 +21,6 @@ file:///home/erik/.aureola .aureola
 file:///home/erik/.config/conky conky
 file:///usr/share/applications applications
 file:///home/erik/.config/variety variety
-file:///home/erik/.config .config
 file:///home/erik/.local .local
 file:///opt opt
 file:///tmp tmp
