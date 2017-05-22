@@ -15,7 +15,7 @@ set -e
 sudo pacman -S --noconfirm --needed archey3 baobab bleachbit clementine 
 sudo pacman -S --noconfirm --needed darktable dconf-editor
 sudo pacman -S --noconfirm --needed evolution
-sudo pacman -S --noconfirm --needed geary glances gnome-disk-utility 
+sudo pacman -S --noconfirm --needed geary gnome-disk-utility 
 sudo pacman -S --noconfirm --needed gpick grsync
 sudo pacman -S --noconfirm --needed hddtemp  
 sudo pacman -S --noconfirm --needed inxi 
