@@ -73,3 +73,6 @@ else
 	fi
 
 fi
+
+sudo systemctl enable teamviewerd.service
+sudo systemctl start teamviewerd.service
