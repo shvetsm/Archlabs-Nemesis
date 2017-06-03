@@ -16,11 +16,10 @@ sudo pacman -S --noconfirm --needed archey3 baobab bleachbit clementine
 sudo pacman -S --noconfirm --needed darktable dconf-editor
 sudo pacman -S --noconfirm --needed evolution
 sudo pacman -S --noconfirm --needed geary gnome-disk-utility 
-sudo pacman -S --noconfirm --needed gpick grsync
+sudo pacman -S --noconfirm --needed grsync
 sudo pacman -S --noconfirm --needed hddtemp  
-sudo pacman -S --noconfirm --needed inxi 
 sudo pacman -S --noconfirm --needed notify-osd pinta
-sudo pacman -S --noconfirm --needed redshift ristretto screenfetch shotwell 
+sudo pacman -S --noconfirm --needed ristretto screenfetch shotwell 
 sudo pacman -S --noconfirm --needed simple-scan sysstat 
 sudo pacman -S --noconfirm --needed transmission-cli
 sudo pacman -S --noconfirm --needed vnstat unclutter  
