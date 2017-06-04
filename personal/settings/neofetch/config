@@ -20,7 +20,7 @@ print_info() {
     info "Uptime" uptime
     info "Packages" packages
     info "Shell" shell
-    #info "Resolution" resolution
+    info "Resolution" resolution
     #info "DE" de
     info "WM" wm
     info "WM Theme" wm_theme
@@ -545,7 +545,7 @@ image_backend="w3m"
 # NOTE: 'auto' will pick the best image source for whatever image backend is used.
 #       In ascii mode, distro ascii art will be used and in an image mode, your
 #       wallpaper will be used.
-image_source="/etc/neofetch/al4.png"
+image_source="/etc/neofetch/archlabs.png"
 
 
 # Ascii Options
